@@ -252,6 +252,16 @@ func (m *Profile) Validate() error {
 		}
 	}
 
+	if v, ok := interface{}(m.GetSecurity()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ProfileValidationError{
+				field:  "Security",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	if v, ok := interface{}(m.GetMetadata()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return ProfileValidationError{
