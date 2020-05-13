@@ -190,6 +190,8 @@ func (m *Profile) Validate() error {
 		return nil
 	}
 
+	// no validation rules for Id
+
 	if v, ok := interface{}(m.GetIdentity()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return ProfileValidationError{
@@ -608,3 +610,139 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = ValidateEmailRequestValidationError{}
+
+// Validate checks the field values on AuthRes with the rules defined in the
+// proto definition for this message. If any rules are violated, an error is returned.
+func (m *AuthRes) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for Token
+
+	// no validation rules for Valid
+
+	return nil
+}
+
+// AuthResValidationError is the validation error returned by AuthRes.Validate
+// if the designated constraints aren't met.
+type AuthResValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e AuthResValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e AuthResValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e AuthResValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e AuthResValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e AuthResValidationError) ErrorName() string { return "AuthResValidationError" }
+
+// Error satisfies the builtin error interface
+func (e AuthResValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sAuthRes.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = AuthResValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = AuthResValidationError{}
+
+// Validate checks the field values on AuthReq with the rules defined in the
+// proto definition for this message. If any rules are violated, an error is returned.
+func (m *AuthReq) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for Username
+
+	// no validation rules for Password
+
+	return nil
+}
+
+// AuthReqValidationError is the validation error returned by AuthReq.Validate
+// if the designated constraints aren't met.
+type AuthReqValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e AuthReqValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e AuthReqValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e AuthReqValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e AuthReqValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e AuthReqValidationError) ErrorName() string { return "AuthReqValidationError" }
+
+// Error satisfies the builtin error interface
+func (e AuthReqValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sAuthReq.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = AuthReqValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = AuthReqValidationError{}
