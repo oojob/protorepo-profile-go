@@ -611,9 +611,10 @@ var _ interface {
 	ErrorName() string
 } = ValidateEmailRequestValidationError{}
 
-// Validate checks the field values on AuthRes with the rules defined in the
-// proto definition for this message. If any rules are violated, an error is returned.
-func (m *AuthRes) Validate() error {
+// Validate checks the field values on AuthResponse with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *AuthResponse) Validate() error {
 	if m == nil {
 		return nil
 	}
@@ -625,9 +626,9 @@ func (m *AuthRes) Validate() error {
 	return nil
 }
 
-// AuthResValidationError is the validation error returned by AuthRes.Validate
-// if the designated constraints aren't met.
-type AuthResValidationError struct {
+// AuthResponseValidationError is the validation error returned by
+// AuthResponse.Validate if the designated constraints aren't met.
+type AuthResponseValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -635,22 +636,22 @@ type AuthResValidationError struct {
 }
 
 // Field function returns field value.
-func (e AuthResValidationError) Field() string { return e.field }
+func (e AuthResponseValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e AuthResValidationError) Reason() string { return e.reason }
+func (e AuthResponseValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e AuthResValidationError) Cause() error { return e.cause }
+func (e AuthResponseValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e AuthResValidationError) Key() bool { return e.key }
+func (e AuthResponseValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e AuthResValidationError) ErrorName() string { return "AuthResValidationError" }
+func (e AuthResponseValidationError) ErrorName() string { return "AuthResponseValidationError" }
 
 // Error satisfies the builtin error interface
-func (e AuthResValidationError) Error() string {
+func (e AuthResponseValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -662,14 +663,14 @@ func (e AuthResValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sAuthRes.%s: %s%s",
+		"invalid %sAuthResponse.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = AuthResValidationError{}
+var _ error = AuthResponseValidationError{}
 
 var _ interface {
 	Field() string
@@ -677,11 +678,12 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = AuthResValidationError{}
+} = AuthResponseValidationError{}
 
-// Validate checks the field values on AuthReq with the rules defined in the
-// proto definition for this message. If any rules are violated, an error is returned.
-func (m *AuthReq) Validate() error {
+// Validate checks the field values on AuthRequest with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *AuthRequest) Validate() error {
 	if m == nil {
 		return nil
 	}
@@ -693,9 +695,9 @@ func (m *AuthReq) Validate() error {
 	return nil
 }
 
-// AuthReqValidationError is the validation error returned by AuthReq.Validate
-// if the designated constraints aren't met.
-type AuthReqValidationError struct {
+// AuthRequestValidationError is the validation error returned by
+// AuthRequest.Validate if the designated constraints aren't met.
+type AuthRequestValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -703,22 +705,22 @@ type AuthReqValidationError struct {
 }
 
 // Field function returns field value.
-func (e AuthReqValidationError) Field() string { return e.field }
+func (e AuthRequestValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e AuthReqValidationError) Reason() string { return e.reason }
+func (e AuthRequestValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e AuthReqValidationError) Cause() error { return e.cause }
+func (e AuthRequestValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e AuthReqValidationError) Key() bool { return e.key }
+func (e AuthRequestValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e AuthReqValidationError) ErrorName() string { return "AuthReqValidationError" }
+func (e AuthRequestValidationError) ErrorName() string { return "AuthRequestValidationError" }
 
 // Error satisfies the builtin error interface
-func (e AuthReqValidationError) Error() string {
+func (e AuthRequestValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -730,14 +732,14 @@ func (e AuthReqValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sAuthReq.%s: %s%s",
+		"invalid %sAuthRequest.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = AuthReqValidationError{}
+var _ error = AuthRequestValidationError{}
 
 var _ interface {
 	Field() string
@@ -745,4 +747,4 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = AuthReqValidationError{}
+} = AuthRequestValidationError{}
