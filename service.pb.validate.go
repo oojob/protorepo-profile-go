@@ -611,75 +611,6 @@ var _ interface {
 	ErrorName() string
 } = ValidateEmailRequestValidationError{}
 
-// Validate checks the field values on AuthResponse with the rules defined in
-// the proto definition for this message. If any rules are violated, an error
-// is returned.
-func (m *AuthResponse) Validate() error {
-	if m == nil {
-		return nil
-	}
-
-	// no validation rules for Token
-
-	// no validation rules for Valid
-
-	return nil
-}
-
-// AuthResponseValidationError is the validation error returned by
-// AuthResponse.Validate if the designated constraints aren't met.
-type AuthResponseValidationError struct {
-	field  string
-	reason string
-	cause  error
-	key    bool
-}
-
-// Field function returns field value.
-func (e AuthResponseValidationError) Field() string { return e.field }
-
-// Reason function returns reason value.
-func (e AuthResponseValidationError) Reason() string { return e.reason }
-
-// Cause function returns cause value.
-func (e AuthResponseValidationError) Cause() error { return e.cause }
-
-// Key function returns key value.
-func (e AuthResponseValidationError) Key() bool { return e.key }
-
-// ErrorName returns error name.
-func (e AuthResponseValidationError) ErrorName() string { return "AuthResponseValidationError" }
-
-// Error satisfies the builtin error interface
-func (e AuthResponseValidationError) Error() string {
-	cause := ""
-	if e.cause != nil {
-		cause = fmt.Sprintf(" | caused by: %v", e.cause)
-	}
-
-	key := ""
-	if e.key {
-		key = "key for "
-	}
-
-	return fmt.Sprintf(
-		"invalid %sAuthResponse.%s: %s%s",
-		key,
-		e.field,
-		e.reason,
-		cause)
-}
-
-var _ error = AuthResponseValidationError{}
-
-var _ interface {
-	Field() string
-	Reason() string
-	Key() bool
-	Cause() error
-	ErrorName() string
-} = AuthResponseValidationError{}
-
 // Validate checks the field values on AuthRequest with the rules defined in
 // the proto definition for this message. If any rules are violated, an error
 // is returned.
@@ -748,3 +679,228 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = AuthRequestValidationError{}
+
+// Validate checks the field values on AuthResponse with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *AuthResponse) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for AccessToken
+
+	// no validation rules for RefreshToken
+
+	// no validation rules for Valid
+
+	return nil
+}
+
+// AuthResponseValidationError is the validation error returned by
+// AuthResponse.Validate if the designated constraints aren't met.
+type AuthResponseValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e AuthResponseValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e AuthResponseValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e AuthResponseValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e AuthResponseValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e AuthResponseValidationError) ErrorName() string { return "AuthResponseValidationError" }
+
+// Error satisfies the builtin error interface
+func (e AuthResponseValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sAuthResponse.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = AuthResponseValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = AuthResponseValidationError{}
+
+// Validate checks the field values on AccessDetails with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *AccessDetails) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for Authorized
+
+	// no validation rules for AccessUuid
+
+	// no validation rules for Username
+
+	// no validation rules for Email
+
+	// no validation rules for UserId
+
+	// no validation rules for Identifier
+
+	// no validation rules for AccountType
+
+	// no validation rules for Verified
+
+	// no validation rules for Exp
+
+	return nil
+}
+
+// AccessDetailsValidationError is the validation error returned by
+// AccessDetails.Validate if the designated constraints aren't met.
+type AccessDetailsValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e AccessDetailsValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e AccessDetailsValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e AccessDetailsValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e AccessDetailsValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e AccessDetailsValidationError) ErrorName() string { return "AccessDetailsValidationError" }
+
+// Error satisfies the builtin error interface
+func (e AccessDetailsValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sAccessDetails.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = AccessDetailsValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = AccessDetailsValidationError{}
+
+// Validate checks the field values on TokenRequest with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *TokenRequest) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for Token
+
+	// no validation rules for AccessUuid
+
+	// no validation rules for UserId
+
+	return nil
+}
+
+// TokenRequestValidationError is the validation error returned by
+// TokenRequest.Validate if the designated constraints aren't met.
+type TokenRequestValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e TokenRequestValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e TokenRequestValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e TokenRequestValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e TokenRequestValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e TokenRequestValidationError) ErrorName() string { return "TokenRequestValidationError" }
+
+// Error satisfies the builtin error interface
+func (e TokenRequestValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sTokenRequest.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = TokenRequestValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = TokenRequestValidationError{}
