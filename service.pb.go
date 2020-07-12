@@ -849,9 +849,7 @@ func init() {
 	proto.RegisterType((*TokenRequest)(nil), "profile.TokenRequest")
 }
 
-func init() {
-	proto.RegisterFile("services/profile/service.proto", fileDescriptor_b18d8e3cf7cb2b0f)
-}
+func init() { proto.RegisterFile("services/profile/service.proto", fileDescriptor_b18d8e3cf7cb2b0f) }
 
 var fileDescriptor_b18d8e3cf7cb2b0f = []byte{
 	// 1108 bytes of a gzipped FileDescriptorProto
